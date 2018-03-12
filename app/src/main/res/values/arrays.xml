@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sw_categories">
+        <item>Films</item>
+        <item>People</item>
+        <item>Planets</item>
+        <item>Spaceships</item>
+        <item>Vehicles</item>
+        <item>Species</item>
+    </string-array>
+</resources>
