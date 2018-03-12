@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="android.sandra.com.starwarsapp.HomeScreenActivity">
+    tools:context="android.sandra.com.starwarsapp.activity.HomeScreenActivity">
 
     <ListView
         android:id="@+id/lv_home_screen"
