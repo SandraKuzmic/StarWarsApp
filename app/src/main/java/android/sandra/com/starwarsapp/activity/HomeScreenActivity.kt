@@ -1,8 +1,12 @@
 package android.sandra.com.starwarsapp.activity
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.sandra.com.starwarsapp.R
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 
@@ -22,5 +26,17 @@ class HomeScreenActivity : AppCompatActivity() {
                 swCategories)
 
         listView.adapter = adapter
+
+        listView.onItemClickListener = ClickListener(this)
     }
+}
+
+class ClickListener(val context:Context) : AdapterView.OnItemClickListener {
+
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        when(position) {
+            0 -> context.startActivity(Intent(context, FilmActivity::class.java))
+        }
+    }
+
 }
