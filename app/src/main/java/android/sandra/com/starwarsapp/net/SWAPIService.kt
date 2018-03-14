@@ -1,7 +1,6 @@
 package android.sandra.com.starwarsapp.net
 
-import android.sandra.com.starwarsapp.entity.Model
-import android.sandra.com.starwarsapp.entity.Result
+import android.sandra.com.starwarsapp.entity.*
 import com.google.gson.GsonBuilder
 import io.reactivex.Observable
 import retrofit2.Retrofit
@@ -9,6 +8,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 //base url must end in /
 val baseUrl = "https://swapi.co/api/"
@@ -16,25 +16,25 @@ val baseUrl = "https://swapi.co/api/"
 interface SWAPIService {
 
     @GET("films/{id}")
-    fun getFilm(@Path("id") id: Int): Observable<Model.Film>
+    fun getFilm(@Path("id") id: Int): Observable<Film>
 
-    @GET("films")
-    fun getFilms(): Observable<Result<Model.Film>>
+    @GET("films/")
+    fun getFilms(@Query("page") page: Int = 1): Observable<Result<Film>>
 
-    @GET("people")
-    fun getPeople(): Observable<Result<Model.Person>>
+    @GET("people/")
+    fun getPeople(@Query("page") page: Int = 1): Observable<Result<Person>>
 
-    @GET("planets")
-    fun getPlanets(): Observable<Result<Model.Planet>>
+    @GET("planets/")
+    fun getPlanets(@Query("page") page: Int = 1): Observable<Result<Planet>>
 
-    @GET("starships")
-    fun getSpaceships(): Observable<Result<Model.Spaceship>>
+    @GET("starships/")
+    fun getSpaceships(@Query("page") page: Int = 1): Observable<Result<Spaceship>>
 
-    @GET("vehicles")
-    fun getVehicles(): Observable<Result<Model.Vehicle>>
+    @GET("vehicles/")
+    fun getVehicles(@Query("page") page: Int = 1): Observable<Result<Vehicle>>
 
-    @GET("species")
-    fun getSpecies(): Observable<Result<Model.Species>>
+    @GET("species/")
+    fun getSpecies(@Query("page") page: Int = 1): Observable<Result<Species>>
 
 
     companion object {
