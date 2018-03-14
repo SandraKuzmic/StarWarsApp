@@ -3,6 +3,7 @@ package android.sandra.com.starwarsapp.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.sandra.com.starwarsapp.CATEGORY_BUNDLE_KEY
 import android.sandra.com.starwarsapp.R
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -31,12 +32,14 @@ class HomeScreenActivity : AppCompatActivity() {
     }
 }
 
-class ClickListener(val context:Context) : AdapterView.OnItemClickListener {
+class ClickListener(private val context: Context) : AdapterView.OnItemClickListener {
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        when(position) {
-            0 -> context.startActivity(Intent(context, FilmActivity::class.java))
-        }
+        val intent = Intent(context, ListActivity::class.java)
+        intent.putExtra(CATEGORY_BUNDLE_KEY, position)
+
+        context.startActivity(intent)
+
     }
 
 }

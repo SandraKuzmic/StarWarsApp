@@ -16,4 +16,28 @@ object Model {
             val edited: String
     )
 
+    data class Person(
+            val name: String,
+            @SerializedName("birth_year") val birthYear: String,
+            @SerializedName("eye:color") val eyeColor: String,
+            val gender: String,
+            @SerializedName("hair_color") val hairColor: String
+    )
+
+    data class Planet(
+            val name: String
+    )
+
+    data class Species (
+            val name: String
+    )
+
+    data class Spaceship (
+            val name: String
+    )
+
+    data class Vehicle(
+            val name: String
+    )
+
 }
