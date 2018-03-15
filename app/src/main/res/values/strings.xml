@@ -8,4 +8,12 @@
     <string name="producer">Produced by:\u0020</string>
     <string name="release_date">Release date:\u0020</string>
 
+    <string name="gender">Gender:\u0020</string>
+    <string name="birth_year">Birth year:\u0020</string>
+    <string name="height_cm">Height: %s cm</string>
+    <string name="mass_kg">Mass: %s kg</string>
+    <string name="skin_color">Skin color:\u0020</string>
+    <string name="hair_color">Hair color:\u0020</string>
+    <string name="eye_color">Eye color:\u0020</string>
+
 </resources>
