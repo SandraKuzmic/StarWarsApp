@@ -15,23 +15,49 @@ val baseUrl = "https://swapi.co/api/"
 
 interface SWAPIService {
 
+    //---------------------films-------------------------------------
     @GET("films/{id}")
     fun getFilm(@Path("id") id: Int): Observable<Film>
 
     @GET("films/")
     fun getFilms(@Query("page") page: Int = 1): Observable<Result<Film>>
 
+
+    //---------------------people------------------------------------
+    @GET("people/{id}")
+    fun getPerson(@Path("id") id:Int): Observable<Person>
+
     @GET("people/")
     fun getPeople(@Query("page") page: Int = 1): Observable<Result<Person>>
+
+
+    //---------------------planets-----------------------------------
+    @GET("planets/{id}")
+    fun getPlanet(@Path("id") id:Int): Observable<Planet>
 
     @GET("planets/")
     fun getPlanets(@Query("page") page: Int = 1): Observable<Result<Planet>>
 
+
+    //---------------------spaceships-----------------------------------
+    @GET("starships/{id}")
+    fun getSpaceship(@Path("id") id:Int): Observable<Spaceship>
+
     @GET("starships/")
     fun getSpaceships(@Query("page") page: Int = 1): Observable<Result<Spaceship>>
 
+
+    //---------------------vehicles------------------------------------
+    @GET("vehicles/{id}")
+    fun getVehicle(@Path("id") id:Int): Observable<Vehicle>
+
     @GET("vehicles/")
     fun getVehicles(@Query("page") page: Int = 1): Observable<Result<Vehicle>>
+
+
+    //---------------------species------------------------------------
+    @GET("species/{id}")
+    fun getSpecie(@Path("id") id:Int): Observable<Species>
 
     @GET("species/")
     fun getSpecies(@Query("page") page: Int = 1): Observable<Result<Species>>
