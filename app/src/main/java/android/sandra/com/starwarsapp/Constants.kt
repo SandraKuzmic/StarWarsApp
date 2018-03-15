@@ -3,6 +3,8 @@ package android.sandra.com.starwarsapp
 const val CATEGORY_BUNDLE_KEY = "CATEGORY_BUNDLE_KEY"
 const val CATEGORY_BUNDLE_DEFAULT = 0
 
+const val FILM_BUNDLE_KEY = "FILM_BUNDLE_KEY"
+
 enum class CATEGORIES(val id: Int) {
     FILMS(0),
     PEOPLE(1),

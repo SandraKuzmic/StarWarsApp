@@ -1,6 +1,7 @@
 package android.sandra.com.starwarsapp.entity
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 //use serialized name everywhere?
 data class Film(
@@ -11,4 +12,4 @@ data class Film(
         @SerializedName("producer") val producer: String,
         @SerializedName("release_date") val releaseDate: String,
         @SerializedName("url") val url: String
-)
+): Serializable

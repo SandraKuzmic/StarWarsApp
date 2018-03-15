@@ -1,10 +1,9 @@
 package android.sandra.com.starwarsapp.activity
 
+import android.content.Intent
 import android.os.Bundle
-import android.sandra.com.starwarsapp.CATEGORIES
-import android.sandra.com.starwarsapp.CATEGORY_BUNDLE_DEFAULT
-import android.sandra.com.starwarsapp.CATEGORY_BUNDLE_KEY
-import android.sandra.com.starwarsapp.R
+import android.sandra.com.starwarsapp.*
+import android.sandra.com.starwarsapp.entity.*
 import android.sandra.com.starwarsapp.net.SWAPIService
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -33,6 +32,12 @@ class ListActivity : AppCompatActivity() {
     private var adapter: ArrayAdapter<String>? = null
     private var listView: ListView? = null
     private var btnLoadMore: Button? = null
+
+    private var films = mutableListOf<Film>()
+    private var people = mutableListOf<Person>()
+    private var planets = mutableListOf<Planet>()
+    private var spaceships = mutableListOf<Spaceship>()
+    private var vehicles = mutableListOf<Vehicle>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +69,10 @@ class ListActivity : AppCompatActivity() {
         listView?.adapter = adapter
         listView?.emptyView = findViewById(R.id.tv_empty_list)
 
+        listView?.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            startActivity(initActivityIntent(position))
+        }
+
         btnLoadMore = Button(this)
         btnLoadMore?.text = getString(R.string.load_more)
         btnLoadMore?.setPadding(15, 15, 15, 15)
@@ -81,7 +90,10 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> showData(result.results.sortedBy { it.episodeId }.map { it.title }, result.next != null) },
+                            { result ->
+                                val sortedData = result.results.sortedBy { it.episodeId }
+                                films.addAll(sortedData)
+                                showData(sortedData.map { it.title }, result.next != null) },
                             { err -> showError(err.message) }
                     )
 
@@ -140,6 +152,30 @@ class ListActivity : AppCompatActivity() {
         } else if (!displayLoadMore) {
             listView?.removeFooterView(btnLoadMore)
         }
+    }
+
+    private fun initActivityIntent(position: Int): Intent {
+        when (categoryIndex) {
+
+            CATEGORIES.FILMS.id -> {
+                intent = Intent(this, FilmActivity::class.java)
+                intent.putExtra(FILM_BUNDLE_KEY, films[position])
+            }
+
+            CATEGORIES.PEOPLE.id -> {
+                intent = Intent(this, FilmActivity::class.java)
+            }
+
+            CATEGORIES.PLANETS.id -> intent = Intent(this, FilmActivity::class.java)
+
+            CATEGORIES.SPACESHIPS.id -> intent = Intent(this, FilmActivity::class.java)
+
+            CATEGORIES.VEHICLES.id -> intent = Intent(this, FilmActivity::class.java)
+
+            CATEGORIES.SPECIES.id -> intent = Intent(this, FilmActivity::class.java)
+        }
+
+        return intent
     }
 
     private fun visibilityProgressBar(visible: Boolean) {

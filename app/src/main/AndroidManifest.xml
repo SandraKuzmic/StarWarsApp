@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--activities-->
+        <!-- activities -->
 
         <activity android:name=".activity.HomeScreenActivity">
             <intent-filter>
@@ -29,7 +29,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.HomeScreenActivity" />
         </activity>
-
+        <activity android:name=".activity.FilmActivity"></activity>
     </application>
 
 </manifest>
