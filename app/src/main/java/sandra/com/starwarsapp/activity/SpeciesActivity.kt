@@ -3,10 +3,10 @@ package android.sandra.com.starwarsapp.activity
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.sandra.com.starwarsapp.R
-import android.sandra.com.starwarsapp.SPECIES_BUNDLE_KEY
 import android.sandra.com.starwarsapp.databinding.ActivitySpeciesBinding
 import android.sandra.com.starwarsapp.entity.Species
 import android.support.v7.app.AppCompatActivity
+import sandra.com.starwarsapp.SPECIES_BUNDLE_KEY
 
 class SpeciesActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package android.sandra.com.starwarsapp
+package sandra.com.starwarsapp
 
 const val CATEGORY_BUNDLE_KEY = "CATEGORY_BUNDLE_KEY"
 const val CATEGORY_BUNDLE_DEFAULT = 0

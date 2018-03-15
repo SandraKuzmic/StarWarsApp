@@ -3,7 +3,7 @@ package android.sandra.com.starwarsapp.activity
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.sandra.com.starwarsapp.R
-import android.sandra.com.starwarsapp.VEHICLE_BUNDLE_KEY
+import sandra.com.starwarsapp.VEHICLE_BUNDLE_KEY
 import android.sandra.com.starwarsapp.databinding.ActivityVehicleBinding
 import android.sandra.com.starwarsapp.entity.Vehicle
 import android.support.v7.app.AppCompatActivity

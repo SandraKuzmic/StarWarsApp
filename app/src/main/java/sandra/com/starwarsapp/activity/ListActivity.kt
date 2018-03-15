@@ -14,6 +14,7 @@ import android.widget.Toast.LENGTH_LONG
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import sandra.com.starwarsapp.*
 
 class ListActivity : AppCompatActivity() {
 

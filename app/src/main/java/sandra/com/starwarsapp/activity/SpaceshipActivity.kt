@@ -3,7 +3,7 @@ package android.sandra.com.starwarsapp.activity
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.sandra.com.starwarsapp.R
-import android.sandra.com.starwarsapp.SPACESHIP_BUNDLE_KEY
+import sandra.com.starwarsapp.SPACESHIP_BUNDLE_KEY
 import android.sandra.com.starwarsapp.databinding.ActivitySpaceshipBinding
 import android.sandra.com.starwarsapp.entity.Spaceship
 import android.support.v7.app.AppCompatActivity
