@@ -23,4 +23,13 @@
     <string name="average_life_span_years">Average lifespan: %s years</string>
     <string name="average_height_cm">Average height: %s cm</string>
 
+    <string name="diameter_km">Diameter: %s km</string>
+    <string name="rotation_period_hours">Rotation period: %s hours</string>
+    <string name="orbital_period_hours">Orbital period: %s hours</string>
+    <string name="gravity_g">Gravity: %s G</string>
+    <string name="population">Population:\u0020</string>
+    <string name="climate">Climate:\u0020</string>
+    <string name="terrain">Terrain:\u0020</string>
+    <string name="percentage_water">Percentage of water: %s%%</string>
+
 </resources>
