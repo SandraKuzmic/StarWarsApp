@@ -14,10 +14,10 @@
 
         <!-- activities -->
 
-        <activity android:name=".activity.HomeScreenActivity">
+        <activity android:name=".activity.HomeScreenActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -32,6 +32,7 @@
 
         <activity
             android:name=".activity.FilmActivity"
+            android:label="Films"
             android:parentActivityName=".activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -40,6 +41,7 @@
 
         <activity
             android:name=".activity.PeopleActivity"
+            android:label="People"
             android:parentActivityName=".activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -48,6 +50,7 @@
 
         <activity
             android:name=".activity.PlanetsActivity"
+            android:label="Planets"
             android:parentActivityName=".activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -56,6 +59,7 @@
 
         <activity
             android:name=".activity.SpaceshipActivity"
+            android:label="Spaceships"
             android:parentActivityName=".activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -64,6 +68,7 @@
 
         <activity
             android:name=".activity.VehicleActivity"
+            android:label="Vehicle"
             android:parentActivityName=".activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -72,6 +77,7 @@
 
         <activity
             android:name=".activity.SpeciesActivity"
+            android:label="Species"
             android:parentActivityName=".activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

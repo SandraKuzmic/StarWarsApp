@@ -18,14 +18,13 @@ class FilmActivity : AppCompatActivity() {
 
         val film = intent.getSerializableExtra(FILM_BUNDLE_KEY) as Film
 
-        supportActionBar?.title = film.title
-
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_film)
 
         populateActivityLayout(film)
     }
 
     private fun populateActivityLayout(film: Film) {
+        mBinding?.tvFilmTitle?.text = film.title
         mBinding?.tvFilmEpisode?.append(episodeId(film.episodeId))
         mBinding?.tvFilmOpeningCrawl?.text = film.openingCrawl
         mBinding?.tvFilmDirector?.append(film.director)
