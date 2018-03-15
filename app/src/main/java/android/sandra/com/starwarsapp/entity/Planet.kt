@@ -1,6 +1,7 @@
 package android.sandra.com.starwarsapp.entity
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Planet(
         @SerializedName("name") val name: String,
@@ -13,4 +14,4 @@ data class Planet(
         @SerializedName("terrain") val terrain: String,
         @SerializedName("surface_water") val surfaceWater: String,
         @SerializedName("url") val url: String
-)
+) : Serializable

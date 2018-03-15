@@ -1,6 +1,7 @@
 package android.sandra.com.starwarsapp.entity
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Person(
         @SerializedName("name") val name: String,
@@ -12,4 +13,4 @@ data class Person(
         @SerializedName("mass") val mass: String,
         @SerializedName("skin_color") val skinColor: String,
         @SerializedName("url") val url: String
-)
+) : Serializable

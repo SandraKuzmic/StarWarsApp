@@ -1,6 +1,7 @@
 package android.sandra.com.starwarsapp.entity
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Spaceship(
         @SerializedName("name") val name: String,
@@ -17,4 +18,4 @@ data class Spaceship(
         @SerializedName("cargo_capacity") val cargo_capacity: String,
         @SerializedName("consumables") val consumables: String,
         @SerializedName("url") val url: String
-)
+) : Serializable

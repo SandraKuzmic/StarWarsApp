@@ -38,6 +38,7 @@ class ListActivity : AppCompatActivity() {
     private var planets = mutableListOf<Planet>()
     private var spaceships = mutableListOf<Spaceship>()
     private var vehicles = mutableListOf<Vehicle>()
+    private var species = mutableListOf<Species>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -101,7 +102,9 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> showData(result.results.map { it.name }, result.next != null) },
+                            { result ->
+                                people.addAll(result.results)
+                                showData(result.results.map { it.name }, result.next != null) },
                             { showError() }
                     )
 
@@ -110,7 +113,9 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> showData(result.results.map { it.name }, result.next != null) },
+                            { result ->
+                                planets.addAll(result.results)
+                                showData(result.results.map { it.name }, result.next != null) },
                             { showError() }
                     )
 
@@ -118,7 +123,9 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> showData(result.results.map { it.name }, result.next != null) },
+                            { result ->
+                                spaceships.addAll(result.results)
+                                showData(result.results.map { it.name }, result.next != null) },
                             { showError() }
                     )
 
@@ -126,7 +133,9 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> showData(result.results.map { it.name }, result.next != null) },
+                            { result ->
+                                vehicles.addAll(result.results)
+                                showData(result.results.map { it.name }, result.next != null) },
                             { showError() }
                     )
 
@@ -134,7 +143,9 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> showData(result.results.map { it.name }, result.next != null) },
+                            { result ->
+                                species.addAll(result.results)
+                                showData(result.results.map { it.name }, result.next != null) },
                             { showError() }
                     )
 
@@ -164,15 +175,28 @@ class ListActivity : AppCompatActivity() {
 
             CATEGORIES.PEOPLE.id -> {
                 intent = Intent(this, PeopleActivity::class.java)
+                intent.putExtra(PEOPLE_BUNDLE_KEY, people[position])
             }
 
-            CATEGORIES.PLANETS.id -> intent = Intent(this, PlanetsActivity::class.java)
+            CATEGORIES.PLANETS.id -> {
+                intent = Intent(this, PlanetsActivity::class.java)
+                intent.putExtra(PLANET_BUNDLE_KEY, planets[position])
+            }
 
-            CATEGORIES.SPACESHIPS.id -> intent = Intent(this, SpaceshipActivity::class.java)
+            CATEGORIES.SPACESHIPS.id -> {
+                intent = Intent(this, SpaceshipActivity::class.java)
+                intent.putExtra(SPACESHIP_BUNDLE_KEY, spaceships[position])
+            }
 
-            CATEGORIES.VEHICLES.id -> intent = Intent(this, VehicleActivity::class.java)
+            CATEGORIES.VEHICLES.id -> {
+                intent = Intent(this, VehicleActivity::class.java)
+                intent.putExtra(VEHICLE_BUNDLE_KEY, vehicles[position])
+            }
 
-            CATEGORIES.SPECIES.id -> intent = Intent(this, Species::class.java)
+            CATEGORIES.SPECIES.id -> {
+                intent = Intent(this, Species::class.java)
+                intent.putExtra(SPECIES_BUNDLE_KEY, species[position])
+            }
         }
 
         return intent

@@ -1,6 +1,7 @@
 package android.sandra.com.starwarsapp.entity
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Vehicle(
         @SerializedName("name") val name: String,
@@ -15,4 +16,4 @@ data class Vehicle(
         @SerializedName("cargo_capacity") val cargoCapacity: String,
         @SerializedName("consumables") val consumables: String,
         @SerializedName("url") val url: String
-)
+) : Serializable
