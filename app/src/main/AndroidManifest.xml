@@ -14,8 +14,7 @@
 
         <!-- activities -->
 
-        <activity android:name=".activity.HomeScreenActivity"
-            android:launchMode="singleTop">
+        <activity android:name=".activity.HomeScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,6 +23,7 @@
 
         <activity
             android:name=".activity.ListActivity"
+            android:launchMode="singleTop"
             android:parentActivityName=".activity.HomeScreenActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
