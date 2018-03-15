@@ -42,7 +42,7 @@
     <string name="max_speed">Max atmosphering speed: %s kph</string>
     <string name="hyperdrive_rating">Hyperdrive rating:\u0020</string>
     <string name="mglt">MGLT:\u0020</string>
-    <string name="cargo_capacity">Cargo capacity %s kg</string>
+    <string name="cargo_capacity">Cargo capacity: %s kg</string>
     <string name="consumables">Consumables:\u0020</string>
 
 </resources>

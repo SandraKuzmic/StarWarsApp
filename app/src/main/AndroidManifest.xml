@@ -68,7 +68,7 @@
 
         <activity
             android:name=".activity.VehicleActivity"
-            android:label="Vehicle"
+            android:label="Vehicles"
             android:parentActivityName=".activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

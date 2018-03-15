@@ -27,7 +27,7 @@ class VehicleActivity : AppCompatActivity() {
         mBinding.tvVehicleClass.append(vehicle.vehicleClass)
         mBinding.tvVehicleManufacturer.append(vehicle.manufacturer)
         mBinding.tvVehicleCostInCredits.text = resources.getString(R.string.cost, vehicle.costInCredits)
-        mBinding.tvVehicleLength.text = resources.getString(R.string.length_m)
+        mBinding.tvVehicleLength.text = resources.getString(R.string.length_m, vehicle.length)
         mBinding.tvVehicleCrew.append(vehicle.crew)
         mBinding.tvVehiclePassengers.append(vehicle.passengers)
         mBinding.tvVehicleMaxAtmospheringSpeed.text = resources.getString(R.string.max_speed, vehicle.maxAtmospheringSpeed)
