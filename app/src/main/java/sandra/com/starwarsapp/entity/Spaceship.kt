@@ -1,4 +1,4 @@
-package android.sandra.com.starwarsapp.entity
+package sandra.com.starwarsapp.entity
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
