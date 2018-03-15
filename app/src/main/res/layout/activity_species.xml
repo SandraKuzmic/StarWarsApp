@@ -3,87 +3,102 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ProgressBar
+            android:id="@+id/pb_load_species"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_species_name"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textSize="20sp"
-                tools:text="Name" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_species_classification"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="@string/classification" />
 
-            <TextView
-                android:id="@+id/tv_species_designation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="@string/designation" />
+                <TextView
+                    android:id="@+id/tv_species_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:textSize="20sp"
+                    tools:text="Name" />
 
-            <TextView
-                android:id="@+id/tv_species_homeworld"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="@string/homeworld" />
+                <TextView
+                    android:id="@+id/tv_species_classification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/classification" />
 
-            <TextView
-                android:id="@+id/tv_species_language"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="@string/language" />
+                <TextView
+                    android:id="@+id/tv_species_designation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/designation" />
 
-            <TextView
-                android:id="@+id/tv_species_average_lifespan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                tools:text="@string/average_life_span_years" />
+                <TextView
+                    android:id="@+id/tv_species_homeworld"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/homeworld" />
 
-            <TextView
-                android:id="@+id/tv_species_average_height"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                tools:text="@string/average_height_cm" />
+                <TextView
+                    android:id="@+id/tv_species_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/language" />
 
-            <TextView
-                android:id="@+id/tv_species_skin_colors"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="@string/skin_color" />
+                <TextView
+                    android:id="@+id/tv_species_average_lifespan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    tools:text="@string/average_life_span_years" />
 
-            <TextView
-                android:id="@+id/tv_species_hair_colors"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="@string/hair_color" />
+                <TextView
+                    android:id="@+id/tv_species_average_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    tools:text="@string/average_height_cm" />
 
-            <TextView
-                android:id="@+id/tv_species_eye_colors"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="@string/eye_color" />
+                <TextView
+                    android:id="@+id/tv_species_skin_colors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/skin_color" />
 
-        </LinearLayout>
-    </ScrollView>
+                <TextView
+                    android:id="@+id/tv_species_hair_colors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/hair_color" />
+
+                <TextView
+                    android:id="@+id/tv_species_eye_colors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/eye_color" />
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
 </layout>
