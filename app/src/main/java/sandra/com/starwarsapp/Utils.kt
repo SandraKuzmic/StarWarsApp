@@ -1,10 +1,17 @@
 package sandra.com.starwarsapp
 
 import android.view.View
-import android.widget.ProgressBar
+import java.util.regex.Pattern
 
-fun getDataId(url: String)= url.takeLast(3).substring(1, 2).toInt()
+fun getDataId(url: String): Int {
+    val p = Pattern.compile("/(\\d+)/$")
+    val matcher = p.matcher(url)
+    if (matcher.find()) {
+        return matcher.group(1).toString().toInt()
+    }
+    return -1
+}
 
-fun visibilityProgressBar(pbLoad: ProgressBar, visible: Boolean) {
-    pbLoad.visibility = if (visible) View.VISIBLE else View.GONE
+fun visibilityOfView(view: View, visible: Boolean) {
+    view.visibility = if (visible) View.VISIBLE else View.GONE
 }

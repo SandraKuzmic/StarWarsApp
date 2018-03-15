@@ -16,7 +16,7 @@ import sandra.com.starwarsapp.entity.Person
 import sandra.com.starwarsapp.entity.Planet
 import sandra.com.starwarsapp.getDataId
 import sandra.com.starwarsapp.net.SWAPIService
-import sandra.com.starwarsapp.visibilityProgressBar
+import sandra.com.starwarsapp.visibilityOfView
 
 class PeopleActivity : AppCompatActivity() {
 
@@ -39,13 +39,13 @@ class PeopleActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { result ->
-                            visibilityProgressBar(mBinding.pbLoadHomeworld, false)
+                            visibilityOfView(mBinding.pbLoadHomeworld, false)
                             populateActivityLayout(person, mBinding, result)
                         },
                         { err ->
-                            visibilityProgressBar(mBinding.pbLoadHomeworld, false)
+                            visibilityOfView(mBinding.pbLoadHomeworld, false)
+                            visibilityOfView(mBinding.peopleView, false)
                             Toast.makeText(this, getString(R.string.could_not_load_data), Toast.LENGTH_LONG).show()
-
                         }
                 )
     }

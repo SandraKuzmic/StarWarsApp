@@ -16,7 +16,7 @@ import sandra.com.starwarsapp.entity.Planet
 import sandra.com.starwarsapp.entity.Species
 import sandra.com.starwarsapp.getDataId
 import sandra.com.starwarsapp.net.SWAPIService
-import sandra.com.starwarsapp.visibilityProgressBar
+import sandra.com.starwarsapp.visibilityOfView
 
 class SpeciesActivity : AppCompatActivity() {
 
@@ -41,14 +41,14 @@ class SpeciesActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { result ->
-                            visibilityProgressBar(mBinding.pbLoadSpecies, false)
+                            visibilityOfView(mBinding.pbLoadSpecies, false)
                             planetOfSpecies = result
                             populateActivityLayout(species, mBinding, result)
                         },
                         { err ->
-                            visibilityProgressBar(mBinding.pbLoadSpecies, false)
+                            visibilityOfView(mBinding.pbLoadSpecies, false)
+                            visibilityOfView(mBinding.speciesView, false)
                             Toast.makeText(this, getString(R.string.could_not_load_data), Toast.LENGTH_LONG).show()
-
                         }
                 )
     }
