@@ -1,9 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="android.sandra.com.starwarsapp.activity.SpaceshipActivity">
 
-</android.support.constraint.ConstraintLayout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_spaceship_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                tools:text="Name" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/model" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_starship_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/starship_class" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_manufacturer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/manufacturer" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_cost_in_credits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                tools:text="@string/cost" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_length"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                tools:text="@string/length_m" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_crew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/crew" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_passengers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/passengers" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_max_atmosphering_speed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                tools:text="@string/max_speed" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_hyperdrive_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/hyperdrive_rating" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_MGLT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/mglt" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_cargo_capacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                tools:text="@string/cargo_capacity" />
+
+            <TextView
+                android:id="@+id/tv_spaceship_consumables"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/consumables" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

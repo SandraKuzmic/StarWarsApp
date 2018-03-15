@@ -32,4 +32,17 @@
     <string name="terrain">Terrain:\u0020</string>
     <string name="percentage_water">Percentage of water: %s%%</string>
 
+    <string name="model">Model:\u0020</string>
+    <string name="starship_class">Class:\u0020</string>
+    <string name="manufacturer">Manufacturer:\u0020</string>
+    <string name="cost">Cost: %s galactic credits</string>
+    <string name="length_m">Length: %s m</string>
+    <string name="crew">Crew:\u0020</string>
+    <string name="passengers">Passengers:\u0020</string>
+    <string name="max_speed">Max atmosphering speed: %s kph</string>
+    <string name="hyperdrive_rating">Hyperdrive rating:\u0020</string>
+    <string name="mglt">MGLT:\u0020</string>
+    <string name="cargo_capacity">Cargo capacity %s kg</string>
+    <string name="consumables">Consumables:\u0020</string>
+
 </resources>
