@@ -1,13 +1,13 @@
-package android.sandra.com.starwarsapp.activity
+package sandra.com.starwarsapp.activity
 
 import android.content.Intent
 import android.os.Bundle
-import sandra.com.starwarsapp.CATEGORY_BUNDLE_KEY
 import android.sandra.com.starwarsapp.R
 import android.support.v7.app.AppCompatActivity
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import sandra.com.starwarsapp.CATEGORY_BUNDLE_KEY
 
 class HomeScreenActivity : AppCompatActivity() {
 

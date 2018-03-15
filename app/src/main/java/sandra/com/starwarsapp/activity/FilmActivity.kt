@@ -1,12 +1,12 @@
-package android.sandra.com.starwarsapp.activity
+package sandra.com.starwarsapp.activity
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import sandra.com.starwarsapp.FILM_BUNDLE_KEY
 import android.sandra.com.starwarsapp.R
 import android.sandra.com.starwarsapp.databinding.ActivityFilmBinding
-import android.sandra.com.starwarsapp.entity.Film
 import android.support.v7.app.AppCompatActivity
+import sandra.com.starwarsapp.FILM_BUNDLE_KEY
+import sandra.com.starwarsapp.entity.Film
 
 class FilmActivity : AppCompatActivity() {
 

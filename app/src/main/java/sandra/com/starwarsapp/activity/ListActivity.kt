@@ -1,10 +1,9 @@
-package android.sandra.com.starwarsapp.activity
+package sandra.com.starwarsapp.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.sandra.com.starwarsapp.*
-import android.sandra.com.starwarsapp.entity.*
-import android.sandra.com.starwarsapp.net.SWAPIService
+import android.sandra.com.starwarsapp.R
+import android.sandra.com.starwarsapp.activity.*
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View.GONE
@@ -15,6 +14,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import sandra.com.starwarsapp.*
+import sandra.com.starwarsapp.entity.*
+import sandra.com.starwarsapp.net.SWAPIService
 
 class ListActivity : AppCompatActivity() {
 

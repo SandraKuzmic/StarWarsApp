@@ -1,6 +1,5 @@
-package android.sandra.com.starwarsapp.net
+package sandra.com.starwarsapp.net
 
-import android.sandra.com.starwarsapp.entity.*
 import com.google.gson.GsonBuilder
 import io.reactivex.Observable
 import retrofit2.Retrofit
@@ -9,6 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+import sandra.com.starwarsapp.entity.*
 
 //base url must end in /
 val baseUrl = "https://swapi.co/api/"

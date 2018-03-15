@@ -14,7 +14,7 @@
 
         <!-- activities -->
 
-        <activity android:name=".activity.HomeScreenActivity">
+        <activity android:name="sandra.com.starwarsapp.activity.HomeScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,66 +22,66 @@
         </activity>
 
         <activity
-            android:name=".activity.ListActivity"
+            android:name="sandra.com.starwarsapp.activity.ListActivity"
             android:launchMode="singleTop"
-            android:parentActivityName=".activity.HomeScreenActivity">
+            android:parentActivityName="sandra.com.starwarsapp.activity.HomeScreenActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.HomeScreenActivity" />
+                android:value="sandra.com.starwarsapp.activity.HomeScreenActivity" />
         </activity>
 
         <activity
-            android:name=".activity.FilmActivity"
+            android:name="sandra.com.starwarsapp.activity.FilmActivity"
             android:label="Films"
-            android:parentActivityName=".activity.ListActivity">
+            android:parentActivityName="sandra.com.starwarsapp.activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ListActivity" />
+                android:value="sandra.com.starwarsapp.activity.ListActivity" />
         </activity>
 
         <activity
-            android:name=".activity.PeopleActivity"
+            android:name="sandra.com.starwarsapp.activity.PeopleActivity"
             android:label="People"
-            android:parentActivityName=".activity.ListActivity">
+            android:parentActivityName="sandra.com.starwarsapp.activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ListActivity" />
+                android:value="sandra.com.starwarsapp.activity.ListActivity" />
         </activity>
 
         <activity
-            android:name=".activity.PlanetsActivity"
+            android:name="sandra.com.starwarsapp.activity.PlanetsActivity"
             android:label="Planets"
-            android:parentActivityName=".activity.ListActivity">
+            android:parentActivityName="sandra.com.starwarsapp.activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ListActivity" />
+                android:value="sandra.com.starwarsapp.activity.ListActivity" />
         </activity>
 
         <activity
-            android:name=".activity.SpaceshipActivity"
+            android:name="sandra.com.starwarsapp.activity.SpaceshipActivity"
             android:label="Spaceships"
-            android:parentActivityName=".activity.ListActivity">
+            android:parentActivityName="sandra.com.starwarsapp.activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ListActivity" />
+                android:value="sandra.com.starwarsapp.activity.ListActivity" />
         </activity>
 
         <activity
-            android:name=".activity.VehicleActivity"
+            android:name="sandra.com.starwarsapp.activity.VehicleActivity"
             android:label="Vehicles"
-            android:parentActivityName=".activity.ListActivity">
+            android:parentActivityName="sandra.com.starwarsapp.activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ListActivity" />
+                android:value="sandra.com.starwarsapp.activity.ListActivity" />
         </activity>
 
         <activity
-            android:name=".activity.SpeciesActivity"
+            android:name="sandra.com.starwarsapp.activity.SpeciesActivity"
             android:label="Species"
-            android:parentActivityName=".activity.ListActivity">
+            android:parentActivityName="sandra.com.starwarsapp.activity.ListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.ListActivity" />
+                android:value="sandra.com.starwarsapp.activity.ListActivity" />
         </activity>
     </application>
 
