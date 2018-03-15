@@ -12,5 +12,6 @@ data class Person(
         @SerializedName("height") val height: String,
         @SerializedName("mass") val mass: String,
         @SerializedName("skin_color") val skinColor: String,
+        @SerializedName("homeworld") val homeworld: String,
         @SerializedName("url") val url: String
 ) : Serializable

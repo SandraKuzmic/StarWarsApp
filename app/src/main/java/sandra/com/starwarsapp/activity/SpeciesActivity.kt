@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.sandra.com.starwarsapp.R
 import android.sandra.com.starwarsapp.databinding.ActivitySpeciesBinding
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import android.widget.ProgressBar
 import android.widget.Toast
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -16,7 +14,9 @@ import sandra.com.starwarsapp.PLANET_BUNDLE_KEY
 import sandra.com.starwarsapp.SPECIES_BUNDLE_KEY
 import sandra.com.starwarsapp.entity.Planet
 import sandra.com.starwarsapp.entity.Species
+import sandra.com.starwarsapp.getDataId
 import sandra.com.starwarsapp.net.SWAPIService
+import sandra.com.starwarsapp.visibilityProgressBar
 
 class SpeciesActivity : AppCompatActivity() {
 
@@ -36,7 +36,7 @@ class SpeciesActivity : AppCompatActivity() {
 
         var planetOfSpecies: Planet
 
-        disposal = swapiService.getPlanet(getPlanetId(species.homeworld))
+        disposal = swapiService.getPlanet(getDataId(species.homeworld))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
@@ -77,11 +77,4 @@ class SpeciesActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
-    private fun getPlanetId(url: String): Int = url.takeLast(3)[1].toInt()
-
-    private fun visibilityProgressBar(pbLoad: ProgressBar, visible: Boolean) {
-        pbLoad.visibility = if (visible) View.VISIBLE else View.GONE
-    }
-
 }

@@ -3,7 +3,6 @@ package sandra.com.starwarsapp.activity
 import android.content.Intent
 import android.os.Bundle
 import android.sandra.com.starwarsapp.R
-import android.sandra.com.starwarsapp.activity.*
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View.GONE
