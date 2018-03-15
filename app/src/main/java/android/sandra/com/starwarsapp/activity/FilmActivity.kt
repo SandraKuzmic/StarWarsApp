@@ -10,26 +10,24 @@ import android.support.v7.app.AppCompatActivity
 
 class FilmActivity : AppCompatActivity() {
 
-    private var mBinding: ActivityFilmBinding? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_film)
 
         val film = intent.getSerializableExtra(FILM_BUNDLE_KEY) as Film
 
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_film)
+        val mBinding = DataBindingUtil.setContentView<ActivityFilmBinding>(this, R.layout.activity_film)
 
-        populateActivityLayout(film)
+        populateActivityLayout(film, mBinding)
     }
 
-    private fun populateActivityLayout(film: Film) {
-        mBinding?.tvFilmTitle?.text = film.title
-        mBinding?.tvFilmEpisode?.append(episodeId(film.episodeId))
-        mBinding?.tvFilmOpeningCrawl?.text = film.openingCrawl
-        mBinding?.tvFilmDirector?.append(film.director)
-        mBinding?.tvFilmProducer?.append(film.producer)
-        mBinding?.tvFilmDate?.append(film.releaseDate)
+    private fun populateActivityLayout(film: Film, mBinding: ActivityFilmBinding) {
+        mBinding.tvFilmTitle.text = film.title
+        mBinding.tvFilmEpisode.append(episodeId(film.episodeId))
+        mBinding.tvFilmOpeningCrawl.text = film.openingCrawl
+        mBinding.tvFilmDirector.append(film.director)
+        mBinding.tvFilmProducer.append(film.producer)
+        mBinding.tvFilmDate.append(film.releaseDate)
     }
 
     private fun episodeId(id: Int) = resources.getStringArray(R.array.roman_numbers)[id]
