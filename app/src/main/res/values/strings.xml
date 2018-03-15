@@ -2,4 +2,10 @@
     <string name="app_name">StarWarsApp</string>
     <string name="could_not_load_data">Could not load data</string>
     <string name="load_more">Load more</string>
+
+    <string name="episode">Episode\u0020</string>
+    <string name="director">Directed by:\u0020</string>
+    <string name="producer">Produced by:\u0020</string>
+    <string name="release_date">Release date:\u0020</string>
+
 </resources>

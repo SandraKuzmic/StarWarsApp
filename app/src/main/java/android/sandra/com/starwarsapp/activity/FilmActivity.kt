@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity
 
 class FilmActivity : AppCompatActivity() {
 
-    var mBinding: ActivityFilmBinding? = null
+    private var mBinding: ActivityFilmBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,12 +18,20 @@ class FilmActivity : AppCompatActivity() {
 
         val film = intent.getSerializableExtra(FILM_BUNDLE_KEY) as Film
 
+        supportActionBar?.title = film.title
+
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_film)
 
-        populateActivityLayout(film.title)
+        populateActivityLayout(film)
     }
 
-    private fun populateActivityLayout(title: String) {
-        mBinding?.tvFilmTitle?.text = title
+    private fun populateActivityLayout(film: Film) {
+        mBinding?.tvFilmEpisode?.append(episodeId(film.episodeId))
+        mBinding?.tvFilmOpeningCrawl?.text = film.openingCrawl
+        mBinding?.tvFilmDirector?.append(film.director)
+        mBinding?.tvFilmProducer?.append(film.producer)
+        mBinding?.tvFilmDate?.append(film.releaseDate)
     }
+
+    private fun episodeId(id: Int) = resources.getStringArray(R.array.roman_numbers)[id]
 }

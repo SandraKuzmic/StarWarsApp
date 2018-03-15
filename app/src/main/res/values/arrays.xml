@@ -8,4 +8,15 @@
         <item>Vehicles</item>
         <item>Species</item>
     </string-array>
+
+    <string-array name="roman_numbers">
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+        <item>IV</item>
+        <item>V</item>
+        <item>VI</item>
+        <item>VII</item>
+        <item>VIII</item>
+    </string-array>
 </resources>
