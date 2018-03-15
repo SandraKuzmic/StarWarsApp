@@ -16,4 +16,11 @@
     <string name="hair_color">Hair color:\u0020</string>
     <string name="eye_color">Eye color:\u0020</string>
 
+    <string name="classification">Classification:\u0020</string>
+    <string name="designation">Designation:\u0020</string>
+    <string name="homeworld">Homeworld:\u0020</string>
+    <string name="language">Language:\u0020</string>
+    <string name="average_life_span_years">Average lifespan: %s years</string>
+    <string name="average_height_cm">Average height: %s cm</string>
+
 </resources>

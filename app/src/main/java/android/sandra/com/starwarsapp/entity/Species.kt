@@ -9,7 +9,7 @@ data class Species(
         @SerializedName("designation") val designation: String,
         @SerializedName("average_height") val averageHeight: String,
         @SerializedName("average_lifespan") val averageLifespan: String,
-        @SerializedName("eye_colors") val eye_colors: String,
+        @SerializedName("eye_colors") val eyeColors: String,
         @SerializedName("hair_colors") val hairColors: String,
         @SerializedName("skin_colors") val skinColors: String,
         @SerializedName("language") val language: String,

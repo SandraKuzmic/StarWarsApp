@@ -194,7 +194,7 @@ class ListActivity : AppCompatActivity() {
             }
 
             CATEGORIES.SPECIES.id -> {
-                intent = Intent(this, Species::class.java)
+                intent = Intent(this, SpeciesActivity::class.java)
                 intent.putExtra(SPECIES_BUNDLE_KEY, species[position])
             }
         }
