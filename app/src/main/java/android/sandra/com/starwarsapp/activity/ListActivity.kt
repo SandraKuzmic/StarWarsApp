@@ -31,8 +31,8 @@ class ListActivity : AppCompatActivity() {
     private var page = 1
 
     private var adapter: ArrayAdapter<String>? = null
-
     private var listView: ListView? = null
+    private var btnLoadMore: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,12 +45,7 @@ class ListActivity : AppCompatActivity() {
 
         pbLoad = findViewById(R.id.pb_load_list)
 
-        adapter = ArrayAdapter(this, android.R.layout.simple_selectable_list_item)
-
-        listView = findViewById(R.id.lv_list)
-
-        listView?.adapter = adapter
-        listView?.emptyView = findViewById(R.id.tv_empty_list)
+        initListView()
 
         disposable = getData(categoryIndex)
 
@@ -61,6 +56,23 @@ class ListActivity : AppCompatActivity() {
         disposable?.dispose()
     }
 
+    private fun initListView() {
+        adapter = ArrayAdapter(this, android.R.layout.simple_selectable_list_item)
+
+        listView = findViewById(R.id.lv_list)
+
+        listView?.adapter = adapter
+        listView?.emptyView = findViewById(R.id.tv_empty_list)
+
+        btnLoadMore = Button(this)
+        btnLoadMore?.text = getString(R.string.load_more)
+        btnLoadMore?.setPadding(15, 15, 15, 15)
+        btnLoadMore?.setOnClickListener {
+            page++
+            disposable = getData(categoryIndex)
+        }
+    }
+
     private fun getData(id: Int): Disposable? {
         visibilityProgressBar(true)
 
@@ -69,7 +81,7 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> setData(result.results.sortedBy { it.episodeId }.map { it.title }, result.next != null) },
+                            { result -> showData(result.results.sortedBy { it.episodeId }.map { it.title }, result.next != null) },
                             { err -> showError(err.message) }
                     )
 
@@ -77,7 +89,7 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> setData(result.results.map { it.name }, result.next != null) },
+                            { result -> showData(result.results.map { it.name }, result.next != null) },
                             { showError() }
                     )
 
@@ -86,7 +98,7 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> setData(result.results.map { it.name }, result.next != null) },
+                            { result -> showData(result.results.map { it.name }, result.next != null) },
                             { showError() }
                     )
 
@@ -94,7 +106,7 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> setData(result.results.map { it.name }, result.next != null) },
+                            { result -> showData(result.results.map { it.name }, result.next != null) },
                             { showError() }
                     )
 
@@ -102,7 +114,7 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> setData(result.results.map { it.name }, result.next != null) },
+                            { result -> showData(result.results.map { it.name }, result.next != null) },
                             { showError() }
                     )
 
@@ -110,7 +122,7 @@ class ListActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            { result -> setData(result.results.map { it.name }, result.next != null) },
+                            { result -> showData(result.results.map { it.name }, result.next != null) },
                             { showError() }
                     )
 
@@ -118,29 +130,16 @@ class ListActivity : AppCompatActivity() {
         }
     }
 
-    private fun setData(data: List<String>, displayLoadMore: Boolean) {
+    private fun showData(data: List<String>, displayLoadMore: Boolean) {
         visibilityProgressBar(false)
-        setListView(data, displayLoadMore)
-    }
-
-    private fun setListView(data: List<String>, displayLoadMore: Boolean) {
 
         adapter?.addAll(data)
 
-        if (displayLoadMore && page == 1) {
-            val btnLoadMore = Button(this)
-            btnLoadMore.text = getString(R.string.load_more)
-            btnLoadMore.setPadding(15, 15, 15, 15)
-
-            btnLoadMore.setOnClickListener {
-                page++
-                disposable = getData(categoryIndex)
-            }
-
+        if (displayLoadMore && listView?.footerViewsCount == 0) {
             listView?.addFooterView(btnLoadMore)
+        } else if (!displayLoadMore) {
+            listView?.removeFooterView(btnLoadMore)
         }
-
-
     }
 
     private fun visibilityProgressBar(visible: Boolean) {
@@ -148,7 +147,10 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun showError(msg: String? = "") {
+        visibilityProgressBar(false)
+
         Log.d("SW", msg)
+
         Toast.makeText(this, getString(R.string.could_not_load_data), LENGTH_LONG).show()
     }
 }
