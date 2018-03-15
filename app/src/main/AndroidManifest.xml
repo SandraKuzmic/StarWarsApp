@@ -22,14 +22,61 @@
             </intent-filter>
         </activity>
 
-
-        <activity android:name=".activity.ListActivity"
+        <activity
+            android:name=".activity.ListActivity"
             android:parentActivityName=".activity.HomeScreenActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.HomeScreenActivity" />
         </activity>
-        <activity android:name=".activity.FilmActivity"></activity>
+
+        <activity
+            android:name=".activity.FilmActivity"
+            android:parentActivityName=".activity.ListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ListActivity" />
+        </activity>
+
+        <activity
+            android:name=".activity.PeopleActivity"
+            android:parentActivityName=".activity.ListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ListActivity" />
+        </activity>
+
+        <activity
+            android:name=".activity.PlanetsActivity"
+            android:parentActivityName=".activity.ListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ListActivity" />
+        </activity>
+
+        <activity
+            android:name=".activity.SpaceshipActivity"
+            android:parentActivityName=".activity.ListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ListActivity" />
+        </activity>
+
+        <activity
+            android:name=".activity.VehicleActivity"
+            android:parentActivityName=".activity.ListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ListActivity" />
+        </activity>
+
+        <activity
+            android:name=".activity.SpeciesActivity"
+            android:parentActivityName=".activity.ListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.ListActivity" />
+        </activity>
     </application>
 
 </manifest>

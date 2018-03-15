@@ -163,16 +163,16 @@ class ListActivity : AppCompatActivity() {
             }
 
             CATEGORIES.PEOPLE.id -> {
-                intent = Intent(this, FilmActivity::class.java)
+                intent = Intent(this, PeopleActivity::class.java)
             }
 
-            CATEGORIES.PLANETS.id -> intent = Intent(this, FilmActivity::class.java)
+            CATEGORIES.PLANETS.id -> intent = Intent(this, PlanetsActivity::class.java)
 
-            CATEGORIES.SPACESHIPS.id -> intent = Intent(this, FilmActivity::class.java)
+            CATEGORIES.SPACESHIPS.id -> intent = Intent(this, SpaceshipActivity::class.java)
 
-            CATEGORIES.VEHICLES.id -> intent = Intent(this, FilmActivity::class.java)
+            CATEGORIES.VEHICLES.id -> intent = Intent(this, VehicleActivity::class.java)
 
-            CATEGORIES.SPECIES.id -> intent = Intent(this, FilmActivity::class.java)
+            CATEGORIES.SPECIES.id -> intent = Intent(this, Species::class.java)
         }
 
         return intent
