@@ -22,16 +22,18 @@ class VehicleActivity : AppCompatActivity() {
     }
 
     private fun populateActivityLayout(vehicle: Vehicle, mBinding: ActivityVehicleBinding) {
-        mBinding.tvVehicleName.text = vehicle.name
-        mBinding.tvVehicleModel.append(vehicle.model)
-        mBinding.tvVehicleClass.append(vehicle.vehicleClass)
-        mBinding.tvVehicleManufacturer.append(vehicle.manufacturer)
-        mBinding.tvVehicleCostInCredits.text = resources.getString(R.string.cost, vehicle.costInCredits)
-        mBinding.tvVehicleLength.text = resources.getString(R.string.length_m, vehicle.length)
-        mBinding.tvVehicleCrew.append(vehicle.crew)
-        mBinding.tvVehiclePassengers.append(vehicle.passengers)
-        mBinding.tvVehicleMaxAtmospheringSpeed.text = resources.getString(R.string.max_speed, vehicle.maxAtmospheringSpeed)
-        mBinding.tvVehicleCargoCapacity.text = resources.getString(R.string.cargo_capacity, vehicle.cargoCapacity)
-        mBinding.tvVehicleConsumables.append(vehicle.consumables)
+        mBinding.apply {
+            tvVehicleName.text = vehicle.name
+            tvVehicleModel.append(vehicle.model)
+            tvVehicleClass.append(vehicle.vehicleClass)
+            tvVehicleManufacturer.append(vehicle.manufacturer)
+            tvVehicleCostInCredits.text = resources.getString(R.string.cost, vehicle.costInCredits)
+            tvVehicleLength.text = resources.getString(R.string.length_m, vehicle.length)
+            tvVehicleCrew.append(vehicle.crew)
+            tvVehiclePassengers.append(vehicle.passengers)
+            tvVehicleMaxAtmospheringSpeed.text = resources.getString(R.string.max_speed, vehicle.maxAtmospheringSpeed)
+            tvVehicleCargoCapacity.text = resources.getString(R.string.cargo_capacity, vehicle.cargoCapacity)
+            tvVehicleConsumables.append(vehicle.consumables)
+        }
     }
 }

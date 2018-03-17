@@ -59,22 +59,23 @@ class SpeciesActivity : AppCompatActivity() {
     }
 
     private fun populateActivityLayout(species: Species, mBinding: ActivitySpeciesBinding, planet: Planet) {
-        mBinding.tvSpeciesName.text = species.name
-        mBinding.tvSpeciesClassification.append(species.classification)
-        mBinding.tvSpeciesDesignation.append(species.designation)
-        mBinding.tvSpeciesHomeworld.append(planet.name)
-        mBinding.tvSpeciesLanguage.append(species.language)
-        mBinding.tvSpeciesAverageLifespan.text = resources.getString(R.string.average_life_span_years, species.averageLifespan)
-        mBinding.tvSpeciesAverageHeight.text = resources.getString(R.string.average_height_cm, species.averageHeight)
-        mBinding.tvSpeciesSkinColors.append(species.skinColors)
-        mBinding.tvSpeciesHairColors.append(species.hairColors)
-        mBinding.tvSpeciesEyeColors.append(species.eyeColors)
+        mBinding.apply {
+            tvSpeciesName.text = species.name
+            tvSpeciesClassification.append(species.classification)
+            tvSpeciesDesignation.append(species.designation)
+            tvSpeciesHomeworld.append(planet.name)
+            tvSpeciesLanguage.append(species.language)
+            tvSpeciesAverageLifespan.text = resources.getString(R.string.average_life_span_years, species.averageLifespan)
+            tvSpeciesAverageHeight.text = resources.getString(R.string.average_height_cm, species.averageHeight)
+            tvSpeciesSkinColors.append(species.skinColors)
+            tvSpeciesHairColors.append(species.hairColors)
+            tvSpeciesEyeColors.append(species.eyeColors)
 
-        mBinding.tvSpeciesHomeworld.setOnClickListener { _ ->
-            val intent = Intent(this, PlanetsActivity::class.java)
-            intent.putExtra(PLANET_BUNDLE_KEY, planet)
-
-            startActivity(intent)
+            tvSpeciesHomeworld.setOnClickListener { _ ->
+                val intent = Intent(this@SpeciesActivity, PlanetsActivity::class.java)
+                intent.putExtra(PLANET_BUNDLE_KEY, planet)
+                startActivity(intent)
+            }
         }
     }
 }

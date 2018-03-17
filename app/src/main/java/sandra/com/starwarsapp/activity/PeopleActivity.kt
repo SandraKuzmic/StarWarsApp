@@ -56,21 +56,22 @@ class PeopleActivity : AppCompatActivity() {
     }
 
     private fun populateActivityLayout(person: Person, mBinding: ActivityPeopleBinding, planet: Planet) {
-        mBinding.tvPersonName.text = person.name
-        mBinding.tvPersonGender.append(person.gender)
-        mBinding.tvPersonBirthYear.append(person.birthYear)
-        mBinding.tvPersonHomeworld.append(planet.name)
-        mBinding.tvPersonHeight.text = resources.getString(R.string.height_cm, person.height)
-        mBinding.tvPersonMass.text = resources.getString(R.string.mass_kg, person.mass)
-        mBinding.tvPersonSkinColor.append(person.skinColor)
-        mBinding.tvPersonHairColor.append(person.hairColor)
-        mBinding.tvPersonEyeColor.append(person.eyeColor)
+        mBinding.apply {
+            tvPersonName.text = person.name
+            tvPersonGender.append(person.gender)
+            tvPersonBirthYear.append(person.birthYear)
+            tvPersonHomeworld.append(planet.name)
+            tvPersonHeight.text = resources.getString(R.string.height_cm, person.height)
+            tvPersonMass.text = resources.getString(R.string.mass_kg, person.mass)
+            tvPersonSkinColor.append(person.skinColor)
+            tvPersonHairColor.append(person.hairColor)
+            tvPersonEyeColor.append(person.eyeColor)
 
-        mBinding.tvPersonHomeworld.setOnClickListener { _ ->
-            val intent = Intent(this, PlanetsActivity::class.java)
-            intent.putExtra(PLANET_BUNDLE_KEY, planet)
-
-            startActivity(intent)
+            tvPersonHomeworld.setOnClickListener { _ ->
+                val intent = Intent(this@PeopleActivity, PlanetsActivity::class.java)
+                intent.putExtra(PLANET_BUNDLE_KEY, planet)
+                startActivity(intent)
+            }
         }
     }
 }

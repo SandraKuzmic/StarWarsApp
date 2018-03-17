@@ -22,12 +22,14 @@ class FilmActivity : AppCompatActivity() {
     }
 
     private fun populateActivityLayout(film: Film, mBinding: ActivityFilmBinding) {
-        mBinding.tvFilmTitle.text = film.title
-        mBinding.tvFilmEpisode.append(episodeId(film.episodeId))
-        mBinding.tvFilmOpeningCrawl.text = film.openingCrawl
-        mBinding.tvFilmDirector.append(film.director)
-        mBinding.tvFilmProducer.append(film.producer)
-        mBinding.tvFilmDate.append(film.releaseDate)
+        mBinding.apply {
+            tvFilmTitle.text = film.title
+            tvFilmEpisode.append(episodeId(film.episodeId))
+            tvFilmOpeningCrawl.text = film.openingCrawl
+            tvFilmDirector.append(film.director)
+            tvFilmProducer.append(film.producer)
+            tvFilmDate.append(film.releaseDate)
+        }
     }
 
     private fun episodeId(id: Int) = resources.getStringArray(R.array.roman_numbers)[id]

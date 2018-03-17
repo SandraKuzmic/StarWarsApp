@@ -22,14 +22,16 @@ class PlanetsActivity : AppCompatActivity() {
     }
 
     private fun populateActivityLayout(planet: Planet, mBinding: ActivityPlanetsBinding) {
-        mBinding.tvPlanetName.text = planet.name
-        mBinding.tvPlanetDiameter.text = resources.getString(R.string.diameter_km, planet.diameter)
-        mBinding.tvPlanetRotationPeriod.text = resources.getString(R.string.rotation_period_hours, planet.rotationPeriod)
-        mBinding.tvPlanetOrbitalPeriod.text = resources.getString(R.string.orbital_period_hours, planet.orbitalPeriod)
-        mBinding.tvPlanetGravity.text = resources.getString(R.string.gravity_g, planet.gravity)
-        mBinding.tvPlanetPopulation.append(planet.population)
-        mBinding.tvPlanetClimate.append(planet.climate)
-        mBinding.tvPlanetTerrain.append(planet.terrain)
-        mBinding.tvPlanetSurfaceWater.text = resources.getString(R.string.percentage_water, planet.surfaceWater)
+        mBinding.apply {
+            tvPlanetName.text = planet.name
+            tvPlanetDiameter.text = resources.getString(R.string.diameter_km, planet.diameter)
+            tvPlanetRotationPeriod.text = resources.getString(R.string.rotation_period_hours, planet.rotationPeriod)
+            tvPlanetOrbitalPeriod.text = resources.getString(R.string.orbital_period_hours, planet.orbitalPeriod)
+            tvPlanetGravity.text = resources.getString(R.string.gravity_g, planet.gravity)
+            tvPlanetPopulation.append(planet.population)
+            tvPlanetClimate.append(planet.climate)
+            tvPlanetTerrain.append(planet.terrain)
+            tvPlanetSurfaceWater.text = resources.getString(R.string.percentage_water, planet.surfaceWater)
+        }
     }
 }

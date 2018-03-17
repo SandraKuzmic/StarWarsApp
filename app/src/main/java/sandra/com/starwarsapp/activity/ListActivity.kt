@@ -11,6 +11,7 @@ import android.widget.*
 import android.widget.Toast.LENGTH_LONG
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
+import io.reactivex.disposables.Disposables
 import io.reactivex.schedulers.Schedulers
 import sandra.com.starwarsapp.*
 import sandra.com.starwarsapp.entity.*
@@ -18,21 +19,22 @@ import sandra.com.starwarsapp.net.SWAPIService
 
 class ListActivity : AppCompatActivity() {
 
-    private var disposable: Disposable? = null
-
-    private var categoryIndex: Int = CATEGORY_BUNDLE_DEFAULT
+    private lateinit var disposable: Disposable
 
     private val swapiService by lazy {
         SWAPIService.create()
     }
 
-    private var pbLoad: ProgressBar? = null
+    private var categoryIndex: Int = CATEGORY_BUNDLE_DEFAULT
 
     private var page = 1
 
-    private var adapter: ArrayAdapter<String>? = null
-    private var listView: ListView? = null
-    private var btnLoadMore: Button? = null
+    private lateinit var pbLoad: ProgressBar
+
+    //initialized in initListView()
+    private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var listView: ListView
+    private lateinit var btnLoadMore: Button
 
     private var films = mutableListOf<Film>()
     private var people = mutableListOf<Person>()
@@ -60,7 +62,7 @@ class ListActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        disposable?.dispose()
+        disposable.dispose()
     }
 
     private fun initListView() {
@@ -68,23 +70,23 @@ class ListActivity : AppCompatActivity() {
 
         listView = findViewById(R.id.lv_list)
 
-        listView?.adapter = adapter
-        listView?.emptyView = findViewById(R.id.tv_empty_list)
+        listView.adapter = adapter
+        listView.emptyView = findViewById(R.id.tv_empty_list)
 
-        listView?.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+        listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             startActivity(initActivityIntent(position))
         }
 
         btnLoadMore = Button(this)
-        btnLoadMore?.text = getString(R.string.load_more)
-        btnLoadMore?.setPadding(15, 15, 15, 15)
-        btnLoadMore?.setOnClickListener {
+        btnLoadMore.text = getString(R.string.load_more)
+        btnLoadMore.setPadding(15, 15, 15, 15)
+        btnLoadMore.setOnClickListener {
             page++
             disposable = getData(categoryIndex)
         }
     }
 
-    private fun getData(id: Int): Disposable? {
+    private fun getData(id: Int): Disposable {
         visibilityProgressBar(true)
 
         return when (id) {
@@ -150,19 +152,19 @@ class ListActivity : AppCompatActivity() {
                             { showError() }
                     )
 
-            else -> null
+            else -> Disposables.empty()
         }
     }
 
     private fun showData(data: List<String>, displayLoadMore: Boolean) {
         visibilityProgressBar(false)
 
-        adapter?.addAll(data)
+        adapter.addAll(data)
 
-        if (displayLoadMore && listView?.footerViewsCount == 0) {
-            listView?.addFooterView(btnLoadMore)
+        if (displayLoadMore && listView.footerViewsCount == 0) {
+            listView.addFooterView(btnLoadMore)
         } else if (!displayLoadMore) {
-            listView?.removeFooterView(btnLoadMore)
+            listView.removeFooterView(btnLoadMore)
         }
     }
 
@@ -204,7 +206,7 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun visibilityProgressBar(visible: Boolean) {
-        pbLoad?.visibility = if (visible) VISIBLE else GONE
+        pbLoad.visibility = if (visible) VISIBLE else GONE
     }
 
     private fun showError(msg: String? = "") {

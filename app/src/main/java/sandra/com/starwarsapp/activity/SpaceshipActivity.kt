@@ -22,19 +22,20 @@ class SpaceshipActivity : AppCompatActivity() {
     }
 
     private fun populateActivityLayout(spaceship: Spaceship, mBinding: ActivitySpaceshipBinding) {
-        mBinding.tvSpaceshipName.text = spaceship.name
-        mBinding.tvSpaceshipModel.append(spaceship.model)
-        mBinding.tvSpaceshipStarshipClass.append(spaceship.starshipClass)
-        mBinding.tvSpaceshipManufacturer.append(spaceship.manufacturer)
-        mBinding.tvSpaceshipCostInCredits.text = resources.getString(R.string.cost, spaceship.costInCredits)
-        mBinding.tvSpaceshipLength.text = resources.getString(R.string.length_m, spaceship.length)
-        mBinding.tvSpaceshipCrew.append(spaceship.crew)
-        mBinding.tvSpaceshipPassengers.append(spaceship.passengers)
-        mBinding.tvSpaceshipMaxAtmospheringSpeed.text = resources.getString(R.string.max_speed, spaceship.maxAtmospheringSpeed)
-        mBinding.tvSpaceshipHyperdriveRating.append(spaceship.hyperdriveRating)
-        mBinding.tvSpaceshipMGLT.append(spaceship.MGLT)
-        mBinding.tvSpaceshipCargoCapacity.text = resources.getString(R.string.cargo_capacity, spaceship.cargo_capacity)
-        mBinding.tvSpaceshipConsumables.append(spaceship.consumables)
-
+        mBinding.apply {
+            tvSpaceshipName.text = spaceship.name
+            tvSpaceshipModel.append(spaceship.model)
+            tvSpaceshipStarshipClass.append(spaceship.starshipClass)
+            tvSpaceshipManufacturer.append(spaceship.manufacturer)
+            tvSpaceshipCostInCredits.text = resources.getString(R.string.cost, spaceship.costInCredits)
+            tvSpaceshipLength.text = resources.getString(R.string.length_m, spaceship.length)
+            tvSpaceshipCrew.append(spaceship.crew)
+            tvSpaceshipPassengers.append(spaceship.passengers)
+            tvSpaceshipMaxAtmospheringSpeed.text = resources.getString(R.string.max_speed, spaceship.maxAtmospheringSpeed)
+            tvSpaceshipHyperdriveRating.append(spaceship.hyperdriveRating)
+            tvSpaceshipMGLT.append(spaceship.MGLT)
+            tvSpaceshipCargoCapacity.text = resources.getString(R.string.cargo_capacity, spaceship.cargo_capacity)
+            tvSpaceshipConsumables.append(spaceship.consumables)
+        }
     }
 }
